@@ -131,27 +131,48 @@ class DuelingQNetwork(nn.Module):
     def __init__(self, state_size, action_size, noisy=False):
         super().__init__()
         
-        # TODO: add noisy layers
+        if noisy:
+            self.features = nn.Sequential(
+                nn.Linear(state_size, 32),
+                nn.ReLU(),
+                NoisyLinear(32, 64),
+                nn.ReLU(),
+                NoisyLinear(64, 128) 
+            )
+        else:  
+            self.features = nn.Sequential(
+                nn.Linear(state_size, 32),
+                nn.ReLU(),
+                nn.Linear(32, 64),
+                nn.ReLU(),
+                nn.Linear(64, 128) 
+            )
         
-        self.features = nn.Sequential(
-            nn.Linear(state_size, 32),
-            nn.ReLU(),
-            nn.Linear(32, 64),
-            nn.ReLU(),
-            nn.Linear(64, 128) 
-        )
+        if noisy:
+            self.advantage = nn.Sequential(
+                NoisyLinear(128, 256),
+                nn.ReLU(),
+                NoisyLinear(256, action_size)
+            )
+        else:
+            self.advantage = nn.Sequential(
+                nn.Linear(128, 256),
+                nn.ReLU(),
+                nn.Linear(256, action_size)
+            )
         
-        self.advantage = nn.Sequential(
-            nn.Linear(128, 256),
-            nn.ReLU(),
-            nn.Linear(256, action_size)
-        )
-        
-        self.value = nn.Sequential(
-            nn.Linear(128,256),
-            nn.ReLU(),
-            nn.Linear(256, 1)
-        )
+        if noisy:
+            self.value = nn.Sequential(
+                NoisyLinear(128,256),
+                nn.ReLU(),
+                NoisyLinear(256, 1)
+            )
+        else:
+            self.value = nn.Sequential(
+                nn.Linear(128,256),
+                nn.ReLU(),
+                nn.Linear(256, 1)
+            )
             
     def forward(self, state):
         x = self.features(state)
