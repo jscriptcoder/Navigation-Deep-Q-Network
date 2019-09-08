@@ -292,11 +292,13 @@ class DQNAgent:
                         i_episode, mean_score))
                 
                 if mean_score > best_mean_score:
-                    print('\rBest score so far: {}. Saving the weights'.format(mean_score))
+                    print('\r* Best score so far: {}. Saving the weights\n'.format(mean_score))
                     best_mean_score = mean_score
                     self.save_weights() # let's save the best weights
                 
-            
+        
+        env.close()
+        
         return scores
     
     def make_filename(self, filename):

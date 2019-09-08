@@ -37,11 +37,12 @@ def make_env(env_id,
     return env
     
 
-def run_gym(env, get_action=None, max_t=1000):
-    """Runs an environment against actions
+def run_env(env, get_action=None, max_t=1000, render=False):
+    """Run actions against an environment.
+    We pass a function in that could or not be wrapping an agent's actions
     
     Args:
-        env (Environment): OpenAI Gym environment https://gym.openai.com/envs
+        env (Environment)
         get_action (func): returns actions based on a state
         max_t (int): maximum number of timesteps
     """
@@ -89,6 +90,9 @@ class EnvironmentAdapterForUnity():
         self.action_size = brain.vector_action_space_size
         self.state_size = brain.vector_observation_space_size
     
+    def render():
+        pass # Unity envs don't need to render
+    
     def step(self, action):
         env_info = self.unity_env.step(action)[self.brain_name]
         next_state = env_info.vector_observations[0]
@@ -105,9 +109,25 @@ class EnvironmentAdapterForUnity():
         self.unity_env.close()
 
 
-def plot_scores(scores, title='Deep Q-Network', figsize=(15, 6), polyfit_deg=None):
+def plot_scores(scores, 
+                title='Deep Q-Network', 
+                figsize=(15, 6), 
+                polyfit_deg=None):
+    """Plot scores over time. Optionally will draw a line showing the trend
+    
+    Args:
+        scores (List of float)
+        title (str)
+        figsize (tuple of float)
+            Default: (15, 6)
+        polyfit_deg (int): degree of the fitting polynomial (optional)
+    """
     fig, ax = plt.subplots(figsize=figsize)
     plt.plot(scores)
+    
+    max_score = max(scores)
+    idx_max = np.argmax(scores)
+    plt.scatter(idx_max, max_score, c='r', linewidth=3)
     
     if polyfit_deg is not None:
         x = list(range(len(scores)))
@@ -118,3 +138,4 @@ def plot_scores(scores, title='Deep Q-Network', figsize=(15, 6), polyfit_deg=Non
     plt.title(title)
     ax.set_ylabel('Score')
     ax.set_xlabel('Epochs')
+    ax.legend(['Score', 'Trend', 'Max score: {}'.format(max_score)])
