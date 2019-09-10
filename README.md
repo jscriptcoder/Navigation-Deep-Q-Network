@@ -29,7 +29,7 @@ The task is episodic, and in order to solve the environment, the agent must get 
 
 2. Place the file where your Navigation.ipynb is, and unzip (or decompress) the file. 
 
-3. You need to install the following packages:
+3. Other important packages to install:
 ```
 pip install numpy
 pip install torch
