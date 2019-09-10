@@ -1,3 +1,5 @@
+# Project 1: Report
+
 ## Learning Algorithm
 TODO
 
