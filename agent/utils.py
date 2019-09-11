@@ -1,9 +1,10 @@
 import gym
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
 from gym.wrappers import Monitor
-from collections import namedtuple, deque
+from collections import namedtuple
 
 gym.logger.set_level(40)
 
@@ -18,7 +19,7 @@ makeExperience = namedtuple('Experience',
 def make_env(env_id, 
              use_monitor=False, 
              monitor_dir='recordings', 
-             seed=42):
+             seed=None):
     """Instantiates the OpenAI Gym environment
     
     Args:
@@ -37,7 +38,7 @@ def make_env(env_id,
     return env
     
 
-def run_env(env, get_action=None, max_t=1000, render=False):
+def run_env(env, get_action=None, max_t=1000, close_env=True):
     """Run actions against an environment.
     We pass a function in that could or not be wrapping an agent's actions
     
@@ -59,8 +60,9 @@ def run_env(env, get_action=None, max_t=1000, render=False):
         env.render()
     
         if done: break
-         
-    env.close()
+    
+    if close_env:
+        env.close()
 
 
 class EnvironmentAdapterForUnity():
@@ -109,6 +111,21 @@ class EnvironmentAdapterForUnity():
         self.unity_env.close()
 
 
+def scores2poly1d(scores, polyfit_deg):
+    """Fit a polynomial to a list of scores
+    
+    Args:
+        scores (List of float)
+        polyfit_deg (int): degree of the fitting polynomial
+    
+    Returns:
+        List of int, one-dimensional polynomial class
+    """
+    x = list(range(len(scores)))
+    degs = np.polyfit(x, scores, polyfit_deg)
+    return x, np.poly1d(degs)
+
+
 def plot_scores(scores, 
                 title='Deep Q-Network', 
                 figsize=(15, 6), 
@@ -130,12 +147,35 @@ def plot_scores(scores,
     plt.scatter(idx_max, max_score, c='r', linewidth=3)
     
     if polyfit_deg is not None:
-        x = list(range(len(scores)))
-        degs = np.polyfit(x, scores, polyfit_deg)
-        p = np.poly1d(degs)
+        x, p = scores2poly1d(scores, polyfit_deg)
         plt.plot(p(x), linewidth=3)
     
     plt.title(title)
     ax.set_ylabel('Score')
     ax.set_xlabel('Epochs')
     ax.legend(['Score', 'Trend', 'Max score: {}'.format(max_score)])
+
+def plot_ma_scores(scores, 
+                   title='DQN - Scores rolling window and solution', 
+                   window=100, solved_when=13, figsize=(15, 6)):
+    df = pd.DataFrame(scores)
+    ma = df.rolling(window).mean().dropna()
+    
+    solved_at = ma[ma[0] >=solved_when].iloc[0].name
+    
+    max_ma = np.max(ma.values)
+    idx_max = np.argmax(ma.values) + window
+    
+    
+    
+    fig, ax = plt.subplots(figsize=figsize)
+    plt.plot(ma)
+    plt.axvline(solved_at, color='green', linestyle='--')
+    plt.scatter(idx_max, max_ma, c='r', linewidth=3)
+    
+    plt.title(title)
+    ax.set_ylabel('MA of {} episodes'.format(window))
+    ax.set_xlabel('Epochs')
+    ax.legend(['Last {} scores'.format(window), 
+               'Solved at: {}'.format(solved_at), 
+               'Max MA score: {}'.format(max_ma)])

@@ -12,10 +12,13 @@ class ReplayBuffer:
     Args:
         buffer_size (int)
         batch_size (int)
+        seed (int)
     """
-    def __init__(self, buffer_size, batch_size):
+    def __init__(self, buffer_size, batch_size, seed):
         self.buffer = deque(maxlen=buffer_size)  # internal buffer (deque)
         self.batch_size = batch_size
+        
+        random.seed(seed)
 
     def add(self, experience):
         """Save experience in memory
@@ -50,6 +53,7 @@ class PrioritizedReplayBuffer:
     Args:
         buffer_size (int)
         batch_size (int)
+        seed (int)
     
     Attributes:
         epsilon (float): 
@@ -73,12 +77,14 @@ class PrioritizedReplayBuffer:
     beta = .4
     beta_inc_per_sampling = 0.001
     
-    def __init__(self, buffer_size, batch_size):
+    def __init__(self, buffer_size, batch_size, seed):
         self.buffer_size = buffer_size
         self.batch_size = batch_size
         self.buffer = []
         self.pos = 0
         self.priorities = np.zeros((buffer_size,), dtype=np.float32)
+        
+        np.random.seed(seed)
     
     def add(self, experience):
         """Save experience in memory, giving maximum priosity to new experiences

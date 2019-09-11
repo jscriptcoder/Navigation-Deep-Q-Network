@@ -61,7 +61,6 @@ class DQNAgent:
         self.use_noise = use_noise
         
         random.seed(seed)
-        np.random.seed(seed)
         torch.manual_seed(seed)
 
         # Q-Network
@@ -90,9 +89,9 @@ class DQNAgent:
         self.optimizer = optim.Adam(self.qn_local.parameters(), lr=lr)
 
         if use_priority:
-            self.memory = PrioritizedReplayBuffer(buffer_size, batch_size)
+            self.memory = PrioritizedReplayBuffer(buffer_size, batch_size, seed)
         else:
-            self.memory = ReplayBuffer(buffer_size, batch_size)
+            self.memory = ReplayBuffer(buffer_size, batch_size, seed)
             
         # Initialize time step (for updating every update_every steps)
         self.t_step = 0
@@ -245,7 +244,8 @@ class DQNAgent:
               avg_size_score=100, 
               eps_start=1.0, 
               eps_end=0.01, 
-              eps_decay=0.995):
+              eps_decay=0.995, 
+              close_env=True):
         """Agent trainer
         
         Args:
@@ -295,9 +295,9 @@ class DQNAgent:
                     print('\r* Best score so far: {}. Saving the weights\n'.format(mean_score))
                     best_mean_score = mean_score
                     self.save_weights() # let's save the best weights
-                
         
-        env.close()
+        if close_env:
+            env.close()
         
         return scores
     
