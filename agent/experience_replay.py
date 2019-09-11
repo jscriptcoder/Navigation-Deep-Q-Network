@@ -142,8 +142,7 @@ class PrioritizedReplayBuffer:
             indices (Numpy array of int)
             td_errors (Numpy array of float)
         """
-#        prios = np.abs(td_errors) + self.epsilon
-        prios = td_errors + self.epsilon
+        prios = np.abs(td_errors) + self.epsilon
         for idx, prio in zip(indices, prios):
             self.priorities[idx] = prio
 

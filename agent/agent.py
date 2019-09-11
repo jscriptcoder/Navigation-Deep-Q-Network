@@ -208,7 +208,8 @@ class DQNAgent:
         # Compute loss...
         if self.use_priority:
             # Calculate TD error to update priorities
-            weighted_td_errors = weights * (q_targets - q_expected) ** 2 
+            td_errors = q_targets - q_expected
+            weighted_td_errors = weights * td_errors ** 2 
             loss  = weighted_td_errors.mean()
         else:
             loss = F.mse_loss(q_expected, q_targets)
@@ -219,7 +220,7 @@ class DQNAgent:
         self.optimizer.step() 
         
         if self.use_priority:
-            self.memory.update(indices, weighted_td_errors.detach().cpu().numpy())
+            self.memory.update(indices, td_errors.detach().cpu().numpy())
 
         # Update target network
         self.soft_update(self.tau)    
