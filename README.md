@@ -1,5 +1,7 @@
 # Project 1: Navigation using Deep Q-Network
 
+[Report](Report.md)
+
 ## Project Details
 [image1]: https://user-images.githubusercontent.com/10624937/42135619-d90f2f28-7d12-11e8-8823-82b970a54d7e.gif "Trained Agent"
 The idea is to train an agent to navigate, and collect points — these are bananas!, who doesn't like them? 😋— in a large square world using Deep Q-Network.
