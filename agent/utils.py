@@ -157,7 +157,10 @@ def plot_scores(scores,
 
 def plot_ma_scores(scores, 
                    title='DQN - Scores rolling window and solution', 
-                   window=100, solved_when=13, figsize=(15, 6)):
+                   window=100, 
+                   solved_when=13, 
+                   figsize=(15, 6)):
+    
     df = pd.DataFrame(scores)
     ma = df.rolling(window).mean().dropna()
     
@@ -174,8 +177,28 @@ def plot_ma_scores(scores,
     plt.scatter(idx_max, max_ma, c='r', linewidth=3)
     
     plt.title(title)
-    ax.set_ylabel('MA of {} episodes'.format(window))
+    ax.set_ylabel('MA scores'.format(window))
     ax.set_xlabel('Epochs')
     ax.legend(['Last {} scores'.format(window), 
                'Solved at: {}'.format(solved_at), 
                'Max MA score: {}'.format(max_ma)])
+
+def compare_ma_scores(*scores, 
+                      title='DQN solutions comparison', 
+                      window=100, 
+                      legend=[], 
+                      figsize=(15, 6)):
+    
+    fig, ax = plt.subplots(figsize=figsize)
+    
+    for score in scores:
+        df = pd.DataFrame(score)
+        ma = df.rolling(window).mean().dropna()
+        plt.plot(ma)
+    
+    plt.title(title)
+    ax.set_ylabel('MA scores'.format(window))
+    ax.set_xlabel('Epochs')
+    ax.legend(legend)
+    
+    
