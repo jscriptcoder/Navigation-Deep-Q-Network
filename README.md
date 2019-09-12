@@ -1,7 +1,5 @@
 # Project 1: Navigation using Deep Q-Network
 
-[Report](Report.md)
-
 ## Project Details
 [image1]: https://user-images.githubusercontent.com/10624937/42135619-d90f2f28-7d12-11e8-8823-82b970a54d7e.gif "Trained Agent"
 The idea is to train an agent to navigate, and collect points — these are bananas!, who doesn't like them? 😋— in a large square world using Deep Q-Network.
@@ -17,6 +15,9 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 - **`3`** - turn right.
 
 The task is episodic, and in order to solve the environment, the agent must get an average score of +13 over 100 consecutive episodes.
+
+### Technical details
+For more technical details about this project, algorithms, training, results, comparison, etc... please go to [Report](Report.md)
 
 ### Getting Started
 1. Download the environment from one of the links below. You need only select the environment that matches your operating system:
