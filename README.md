@@ -37,4 +37,4 @@ pip install unityagents
 ```
 
 ## Instructions
-Follow the instructions in [Navigation.ipynb](Navigation.ipynb) to get started with training your own agent!
+Follow the instructions in [Navigation.ipynb](Navigation.ipynb) to get started with training your own agent!. Click [here](https://nbviewer.jupyter.org/github/jscriptcoder/Navigation-Deep-Q-Network/blob/master/Navigation.ipynb) if the notebook doesn't load in Github
