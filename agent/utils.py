@@ -92,7 +92,7 @@ class EnvironmentAdapterForUnity():
         self.action_size = brain.vector_action_space_size
         self.state_size = brain.vector_observation_space_size
     
-    def render():
+    def render(self):
         pass # Unity envs don't need to render
     
     def step(self, action):
