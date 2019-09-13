@@ -1,9 +1,6 @@
 # Report: Navigation using Deep Q-Network
 
 ## Learning Algorithm
-```
-The report clearly describes the learning algorithm, along with the chosen hyperparameters. It also describes the model architectures for any neural networks.
-```
 What we're dealing with here is an envirornment with continuous state space and discrete action space with 4 possible actions. Deep Q-Network is an excellent choise to address this problem.
 
 I'm gonna solve this environment using [vanilla Deep Q-Netwok](http://www.readcube.com/articles/10.1038/nature14236) (with fixed Q-targets) and then we'll try different improvements such as:
@@ -47,11 +44,22 @@ We'll see in a moment what it is to use all this improvements at the same time.
 
 ### Neural Networks Architecture
 1. **Vanilla DQN**:
+
+
 2. **Double DQN**:
+
+
 3. **Dueling DQN**:
+
+
 4. **Prioritized DQN**:
+
+
 5. **NoisyNets DQN**:
+
+
 6. **All of them**:
+
 
 ## Plot of Rewards
 ```
