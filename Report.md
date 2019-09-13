@@ -43,29 +43,23 @@ One fundamental problem of Reinforcement Learning is Exploration/Exploitation di
 We'll see in a moment what it is to use all this improvements at the same time.
 
 ### Neural Networks Architecture
-[vanilla_dqn]: images/vanilla_dqn_agent.png=100x100 "Vanilla DQN Agent"
-[double_dqn]: images/double_dqn_agent.png=100x100 "Double DQN Agent"
-[dueling_dqn]: images/dueling_dqn_agent.png=100x100 "Dueling DQN Agent"
-[per_dqn]: images/per_dqn_agent.png=100x100 "DQN Agent using PER"
-[noisy_dqn]: images/noisy_dqn_agent.png=100x100 "DQN Agent using NoisyNets"
-[all_dqn]: images/all_dqn_agent.png=100x100 "DQN Agent using combined solutions"
 1. **Vanilla DQN**:
-<img src="images/vanilla_dqn_agent.png" style="width:450px;margin-left:30px;" />
+<img src="images/vanilla_dqn_agent.png" width="450" title="Vanilla DQN Agent" />
 
 2. **Double DQN**:
-<img src="images/double_dqn_agent.png" style="width:450px;margin-left:30px;" />
+<img src="images/double_dqn_agent.png" width="450" title="Double DQN Agent" />
 
 3. **Dueling DQN**:
-![dueling_dqn]
+<img src="images/double_dqn_agent.png" width="450" title="Dueling DQN Agent" />
 
 4. **Prioritized DQN**:
-![per_dqn]
+<img src="images/per_dqn_agent.png" width="450" title="DQN Agent using PER" />
 
 5. **NoisyNets DQN**:
-![noisy_dqn]
+<img src="images/noisy_dqn_agent.png" width="450" title="DQN Agent using NoisyNets" />
 
 6. **All of them**:
-![all_dqn]
+<img src="images/all_dqn_agent.png" width="450" title="DQN Agent using combined solutions" />
 
 ## Plot of Rewards
 ```
