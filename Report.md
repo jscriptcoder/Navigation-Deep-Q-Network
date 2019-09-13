@@ -72,23 +72,29 @@ Following I'll present two plots for each solution:
 - Second plot shows detailed result of the training with information such as moving average score in a rolling window of 100 episodes, at which epoch the agent reached the target score of +13 in the last 100 episodes and the maxium moving average score achieved during training.
 
 1. **Vanilla DQN**
-<img src="images/vanilla_dqn_training.png" width="600" title="Vanilla DQN training" />
+<img src="images/vanilla_dqn_training.png" width="700" title="Vanilla DQN training" />
+<img src="images/vanilla_dqn_performance.png" width="700" title="Vanilla DQN performance" />
 
 2. **Double DQN**
-<img src="images/double_dqn_training.png" width="600" title="Double DQN training" />
+<img src="images/double_dqn_training.png" width="700" title="Double DQN training" />
+<img src="images/double_dqn_performance.png" width="700" title="Double DQN performance" />
 
 3. **Dueling DQN**
-<img src="images/dueling_dqn_training.png" width="600" title="Dueling DQN training" />
+<img src="images/dueling_dqn_training.png" width="700" title="Dueling DQN training" />
+<img src="images/dueling_dqn_performance.png" width="700" title="Dueling DQN performance" />
 
 
 4. **Prioritized DQN**
-<img src="images/per_dqn_training.png" width="600" title="PER DQN training" />
+<img src="images/per_dqn_training.png" width="700" title="PER DQN training" />
+<img src="images/per_dqn_performance.png" width="700" title="PER DQN performance" />
 
 5. **NoisyNets DQN**
-<img src="images/noisy_dqn_training.png" width="600" title="Noisy DQN training" />
+<img src="images/noisy_dqn_training.png" width="700" title="Noisy DQN training" />
+<img src="images/noisy_dqn_performance.png" width="700" title="Noisy DQN performance" />
 
 6. **All of them**
-<img src="images/all_dqn_training.png" width="600" title="Combined DQN training" />
+<img src="images/all_dqn_training.png" width="700" title="Combined DQN training" />
+<img src="images/all_dqn_performance.png" width="700" title="Combined DQN performance" />
 
 ## Ideas for Future Work
 ```
