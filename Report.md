@@ -109,4 +109,4 @@ There are other algorithms I haven't tried and that could definitely improve the
 
 We could (and should) additionally explore the effects of tunning the different hyperparameters and model architectures. This would definitely improve the performance, regardless the algorithm used. 
 
-I'd be very curious to see the changes in performance of using only raw pixels as state input. This is must experiement for another time.
+I'd be very curious to see the changes in performance of using only raw pixels as state input. This is a must experiement for another time.
