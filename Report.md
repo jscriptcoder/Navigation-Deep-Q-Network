@@ -100,9 +100,6 @@ We also can see that for this environment, using Dueling DQN is the best solutio
 <img src="images/performance_comparison.png" width="700" title="Performance comparison" />
 
 ## Ideas for Future Work
-```
-The submission has concrete future ideas for improving the agent's performance.
-```
 There are other algorithms I haven't tried and that could definitely improve the agent's performance, such as:
 - Distributional Perspective on Reinforcement Learning (a.k.a. Categorical DQN). [Paper](https://arxiv.org/abs/1707.06887)
 - Multi-Step Deep Reinforcement Learning. [Paper](https://arxiv.org/abs/1901.07510)
@@ -112,4 +109,4 @@ There are other algorithms I haven't tried and that could definitely improve the
 
 We could (and should) additionally explore the effects of tunning the different hyperparameters and model architectures. This would definitely improve the performance, regarless the algorithm used. 
 
-I'd be very curious to see the changes in performance of using only raw pixels as state input. This is must experiement.
+I'd be very curious to see the changes in performance of using only raw pixels as state input. This is must experiement for another time.
