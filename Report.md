@@ -68,26 +68,27 @@ I'm using [ReLU](https://machinelearningmastery.com/rectified-linear-activation-
 A plot of rewards per episode is included to illustrate that the agent is able to receive an average reward (over 100 episodes) of at least +13. The submission reports the number of episodes needed to solve the environment.
 ```
 Following I'll present two plots for each solution:
-- The rewards during training with a fitted line showing the trend and maxing score achieved by the agent.
-- Detailed result of the training with information such as moving average score in a rolling window of 100 episodes, at which epoch the agent reached the target score of +13 in the last 100 episodes and the maxium moving average score achieved during training.
+- First plot shows the rewards during training with a fitted line showing the trend and maxing score achieved by the agent.
+- Second plot shows detailed result of the training with information such as moving average score in a rolling window of 100 episodes, at which epoch the agent reached the target score of +13 in the last 100 episodes and the maxium moving average score achieved during training.
 
 1. **Vanilla DQN**
-<img src="images/vanilla_dqn_training.png" width="500" title="Vanilla DQN training" />
+<img src="images/vanilla_dqn_training.png" width="600" title="Vanilla DQN training" />
 
 2. **Double DQN**
-
+<img src="images/double_dqn_training.png" width="600" title="Double DQN training" />
 
 3. **Dueling DQN**
+<img src="images/dueling_dqn_training.png" width="600" title="Dueling DQN training" />
 
 
 4. **Prioritized DQN**
-
+<img src="images/per_dqn_training.png" width="600" title="PER DQN training" />
 
 5. **NoisyNets DQN**
-
+<img src="images/noisy_dqn_training.png" width="600" title="Noisy DQN training" />
 
 6. **All of them**
-
+<img src="images/all_dqn_training.png" width="600" title="Combined DQN training" />
 
 ## Ideas for Future Work
 ```
