@@ -109,3 +109,7 @@ There are other algorithms I haven't tried and that could definitely improve the
 - Distributional Reinforcement Learning with Quantile Regression. [Paper](https://arxiv.org/abs/1710.10044)
 - Hierarchical Deep Reinforcement Learning. [Paper](https://arxiv.org/abs/1604.06057)
 - Rainbow: Combining Improvements in Deep Reinforcement Learning. [Paper](https://arxiv.org/abs/1710.02298)
+
+We could (and should) additionally explore the effects of tunning the different hyperparameters and model architectures. This would definitely improve the performance, regarless the algorithm used. 
+
+I'd be very curious to see the changes in performance of using only raw pixels as state input. This is must experiement.
