@@ -15,14 +15,16 @@ I'm gonna solve this environment using [vanilla Deep Q-Netwok](http://www.readcu
 
 To finish off, I'll use all of them at once and hopefully we'll see a big performance boost.
 
-### Hyperparameters used
+### Hyperparameters
 _Experience Replay_ is a technique we use to decorrelate transitions observed by the agent and that are stored for later resused and learnt from. It has been shown that this greatly stabilizes and improves the DQN training procedure. These transitions are stored in a buffer, **buffer_size=1e5** , and will be sampled in batches, **batch_size=64**, 
 
 The _discount factor_ (γ) is a measure of how far ahead in time the algorithm looks. If we wanted to prioritise rewards in the distant future, we'd keep the value closer to one. On the other hand if we wanted to consider only rewards in the immediate future, then we'd use a discount factor closer to zero. I'll be using **gamma=0.99**
 
-tau=1e-3, 
-lr=5e-4, 
-update_every=4,
+We use _Fixed Q-targets_ to prevent chasing a moving target effect when using the same parameters (weights) for estimating the target and the Q value. This is because there is a big correlation between the TD target and the parameters we are changing. The solution is using a second network whose weights will be [softly updated](https://github.com/jscriptcoder/Navigation-Deep-Q-Network/blob/master/agent/agent.py#L228), with interpolation parameter **tau=1e-3**,and that we'll be using to calculate the TD target.
+
+We'll be using Adam optimizer with a learning rate **lr=5e-4** for our models. 
+
+How ofter we're gonna learn is dictated by the parameter **update_every=4**, which means every 4 steps we're gonna learn from our experience and update the weights of our networks.
 
 ## Plot of Rewards
 ```
