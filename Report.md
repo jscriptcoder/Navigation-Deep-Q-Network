@@ -50,7 +50,7 @@ We'll see in a moment what it is to use all this improvements at the same time.
 <img src="images/double_dqn_agent.png" width="450" title="Double DQN Agent" />
 
 3. **Dueling DQN**:
-<img src="images/double_dqn_agent.png" width="450" title="Dueling DQN Agent" />
+<img src="images/dueling_dqn_agent.png" width="450" title="Dueling DQN Agent" />
 
 4. **Prioritized DQN**:
 <img src="images/per_dqn_agent.png" width="450" title="DQN Agent using PER" />
