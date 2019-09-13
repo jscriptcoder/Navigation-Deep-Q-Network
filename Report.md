@@ -26,7 +26,7 @@ We'll be using Adam optimizer with a learning rate ```lr=5e-4``` for our models.
 
 How ofter we're gonna learn is dictated by the parameter ```update_every=4```, which means every 4 steps we're gonna learn from previous experiences and update the weights of our networks.
 
-### Solutions
+### Algorithms
 1. **Vanilla DQN**:
 Deep Q-learning algorithm using a simple Experience Replay buffer, Fixed Q-Target improvement and epsilon-greedy exploration method. This is an [excellent article](https://medium.com/@jonathan_hui/rl-dqn-deep-q-network-e207751f7ae4) about this algorithm.
 
@@ -44,6 +44,14 @@ One fundamental problem of Reinforcement Learning is Exploration/Exploitation di
 
 6. **All of them combined**:
 We'll see in a moment what it is to use all this improvements at the same time.
+
+### Neural Networks Architecture
+1. **Vanilla DQN**:
+2. **Double DQN**:
+3. **Dueling DQN**:
+4. **Prioritized DQN**:
+5. **NoisyNets DQN**:
+6. **All of them**:
 
 ## Plot of Rewards
 ```
