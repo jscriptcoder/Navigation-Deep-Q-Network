@@ -24,7 +24,7 @@ We use _Fixed Q-targets_ to prevent the "chasing a moving target" effect when us
 
 We'll be using Adam optimizer with a learning rate **lr=5e-4** for our models. 
 
-How ofter we're gonna learn is dictated by the parameter **update_every=4**, which means every 4 steps we're gonna learn from our experience and update the weights of our networks.
+How ofter we're gonna learn is dictated by the parameter **update_every=4**, which means every 4 steps we're gonna learn from previous experiences and update the weights of our networks.
 
 ## Plot of Rewards
 ```
