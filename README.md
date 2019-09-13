@@ -1,10 +1,7 @@
 # Project 1: Navigation using Deep Q-Network
 
 ## Project Details
-[image1]: https://user-images.githubusercontent.com/10624937/42135619-d90f2f28-7d12-11e8-8823-82b970a54d7e.gif "Trained Agent"
 The idea is to train an agent to navigate, and collect points — these are bananas!, who doesn't like them? 😋— in a large square world using Deep Q-Network.
-
-![Trained Agent][image1]
 
 A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a purple banana.  Thus, the goal of the agent is to collect as many yellow bananas as possible while avoiding the purple ones.  
 
@@ -15,6 +12,13 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 - **`3`** - turn right.
 
 The task is episodic, and in order to solve the environment, the agent must get an average score of +13 over 100 consecutive episodes.
+
+### Demo
+1. Untrained Agent:
+<img src="recordings/untrained_agent.gif" width="500" />
+
+2. Trained Agent:
+<img src="recordings/trained_agent.gif" width="500" />
 
 ### Technical details
 For more technical details about this project, algorithms, training, results, comparison, etc... please go to [Report](Report.md)
