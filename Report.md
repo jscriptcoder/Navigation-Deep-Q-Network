@@ -43,22 +43,22 @@ One fundamental problem of Reinforcement Learning is Exploration/Exploitation di
 We'll see in a moment what it is to use all this improvements at the same time.
 
 ### Neural Networks Architecture
-1. **Vanilla DQN**:
+1. **Vanilla DQN**
 <img src="images/vanilla_dqn_agent.png" width="450" title="Vanilla DQN Agent" />
 
-2. **Double DQN**:
+2. **Double DQN**
 <img src="images/double_dqn_agent.png" width="450" title="Double DQN Agent" />
 
-3. **Dueling DQN**:
+3. **Dueling DQN**
 <img src="images/dueling_dqn_agent.png" width="450" title="Dueling DQN Agent" />
 
-4. **Prioritized DQN**:
+4. **Prioritized DQN**
 <img src="images/per_dqn_agent.png" width="450" title="DQN Agent using PER" />
 
-5. **NoisyNets DQN**:
+5. **NoisyNets DQN**
 <img src="images/noisy_dqn_agent.png" width="450" title="DQN Agent using NoisyNets" />
 
-6. **All of them**:
+6. **All of them**
 <img src="images/all_dqn_agent.png" width="450" title="DQN Agent using combined solutions" />
 
 ## Plot of Rewards
