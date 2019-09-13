@@ -64,9 +64,6 @@ I'm using [ReLU](https://machinelearningmastery.com/rectified-linear-activation-
 <img src="images/all_dqn_agent.png" width="450" title="DQN Agent using combined solutions" />
 
 ## Plot of Rewards
-```
-A plot of rewards per episode is included to illustrate that the agent is able to receive an average reward (over 100 episodes) of at least +13. The submission reports the number of episodes needed to solve the environment.
-```
 Following I'll present two plots for each solution:
 - First plot shows the rewards during training with a fitted line showing the trend and maximum score achieved by the agent.
 - Second plot shows detailed results of the training with information such as moving average score in a rolling window of 100 episodes, at which epoch the agent reached the target score of +13 in the last 100 episodes and the maximum moving average score achieved during training.
@@ -98,7 +95,7 @@ Following I'll present two plots for each solution:
 
 As we can see, most of the improvements achieve better performance than Vanilla DQN, except for Prioritized Experience Replay, which reaches the target later in time. It does though get higher score during training than Vanilla DQN.
 
-We also can see that for this environment, using Noisy Networks for exploration is the best solution, making the agent reach the target very quickly compared to the other improvements. And when all of them are combined, the performance boost is quite noticeable. We can have a better view of this in the next plot, where I'm showing the moving average score in a rolling window of 100 episodes for all the algorithms:
+We also can see that for this environment, using Dueling DQN is the best solution, making the agent reach the target very quickly compared to the other improvements. Second one is using Noisy Networks for exploration, which makes the agent learn quite fast at the beginning. And when all of them are combined, the performance boost is quite noticeable. We can have a better view of this in the next plot, where I'm showing the moving average score in a rolling window of 100 episodes for all the algorithms:
 <img src="images/performance_comparison.png" width="700" title="Performance comparison" />
 
 ## Ideas for Future Work
