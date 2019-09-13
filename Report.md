@@ -68,28 +68,28 @@ Following I'll present two plots for each solution:
 - First plot shows the rewards during training with a fitted line showing the trend and maximum score achieved by the agent.
 - Second plot shows detailed results of the training with information such as moving average score in a rolling window of 100 episodes, at which epoch the agent reached the target score of +13 in the last 100 episodes and the maximum moving average score achieved during training.
 
-1. **Vanilla DQN**
+1. **Vanilla DQN**:
 <img src="images/vanilla_dqn_training.png" width="700" title="Vanilla DQN training" />
 <img src="images/vanilla_dqn_performance.png" width="700" title="Vanilla DQN performance" />
 
-2. **Double DQN**
+2. **Double DQN**:
 <img src="images/double_dqn_training.png" width="700" title="Double DQN training" />
 <img src="images/double_dqn_performance.png" width="700" title="Double DQN performance" />
 
-3. **Dueling DQN**
+3. **Dueling DQN**:
 <img src="images/dueling_dqn_training.png" width="700" title="Dueling DQN training" />
 <img src="images/dueling_dqn_performance.png" width="700" title="Dueling DQN performance" />
 
 
-4. **Prioritized DQN**
+4. **Prioritized DQN**:
 <img src="images/per_dqn_training.png" width="700" title="PER DQN training" />
 <img src="images/per_dqn_performance.png" width="700" title="PER DQN performance" />
 
-5. **NoisyNets DQN**
+5. **NoisyNets DQN**:
 <img src="images/noisy_dqn_training.png" width="700" title="Noisy DQN training" />
 <img src="images/noisy_dqn_performance.png" width="700" title="Noisy DQN performance" />
 
-6. **All of them**
+6. **All of them**:
 <img src="images/all_dqn_training.png" width="700" title="Combined DQN training" />
 <img src="images/all_dqn_performance.png" width="700" title="Combined DQN performance" />
 
@@ -103,3 +103,9 @@ We also can see that for this environment, using Dueling DQN is the best solutio
 ```
 The submission has concrete future ideas for improving the agent's performance.
 ```
+There are other algorithms I haven't tried and that could definitely improve the agent's performance, such as:
+- Distributional Perspective on Reinforcement Learning (a.k.a. Categorical DQN). [Paper](https://arxiv.org/abs/1707.06887)
+- Multi-Step Deep Reinforcement Learning. [Paper](https://arxiv.org/abs/1901.07510)
+- Distributional Reinforcement Learning with Quantile Regression. [Paper](https://arxiv.org/abs/1710.10044)
+- Hierarchical Deep Reinforcement Learning. [Paper](https://arxiv.org/abs/1604.06057)
+- Rainbow: Combining Improvements in Deep Reinforcement Learning. [Paper](https://arxiv.org/abs/1710.02298)
