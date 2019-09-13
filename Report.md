@@ -68,8 +68,8 @@ I'm using [ReLU](https://machinelearningmastery.com/rectified-linear-activation-
 A plot of rewards per episode is included to illustrate that the agent is able to receive an average reward (over 100 episodes) of at least +13. The submission reports the number of episodes needed to solve the environment.
 ```
 Following I'll present two plots for each solution:
-- First plot shows the rewards during training with a fitted line showing the trend and maxing score achieved by the agent.
-- Second plot shows detailed result of the training with information such as moving average score in a rolling window of 100 episodes, at which epoch the agent reached the target score of +13 in the last 100 episodes and the maxium moving average score achieved during training.
+- First plot shows the rewards during training with a fitted line showing the trend and maximum score achieved by the agent.
+- Second plot shows detailed results of the training with information such as moving average score in a rolling window of 100 episodes, at which epoch the agent reached the target score of +13 in the last 100 episodes and the maximum moving average score achieved during training.
 
 1. **Vanilla DQN**
 <img src="images/vanilla_dqn_training.png" width="700" title="Vanilla DQN training" />
@@ -95,6 +95,8 @@ Following I'll present two plots for each solution:
 6. **All of them**
 <img src="images/all_dqn_training.png" width="700" title="Combined DQN training" />
 <img src="images/all_dqn_performance.png" width="700" title="Combined DQN performance" />
+
+We can see that in this environment, using Noisy Networks for exploration is the best improvement, making the agent reach the target very quick compared to the other solutions. Not only that, but also it gets the highest score overall.
 
 ## Ideas for Future Work
 ```
