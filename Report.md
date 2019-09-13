@@ -16,15 +16,22 @@ I'm gonna solve this environment using [vanilla Deep Q-Netwok](http://www.readcu
 To finish off, I'll use all of them at once and hopefully we'll see a big performance boost.
 
 ### Hyperparameters
-_Experience Replay_ is a technique we use to decorrelate transitions observed by the agent and that are stored for later resused and learnt from. It has been shown that this greatly stabilizes and improves the DQN training procedure. These transitions are stored in a buffer, **buffer_size=1e5** , and will be sampled in batches, **batch_size=64**, 
+_Experience Replay_ is a technique we use to decorrelate transitions observed by the agent and that are stored for later resused and learnt from. It has been shown that this greatly stabilizes and improves the DQN training procedure. These transitions are stored in a buffer, ```buffer_size=1e5``` , and will be sampled in batches, ```batch_size=64```, 
 
-The _discount factor_ (γ) is a measure of how far ahead in time the algorithm looks. If we wanted to prioritise rewards in the distant future, we'd keep the value closer to one. On the other hand if we wanted to consider only rewards in the immediate future, then we'd use a discount factor closer to zero. I'll be using **gamma=0.99**
+The _discount factor_ (γ) is a measure of how far ahead in time the algorithm looks. If we wanted to prioritise rewards in the distant future, we'd keep the value closer to one. On the other hand if we wanted to consider only rewards in the immediate future, then we'd use a discount factor closer to zero. I'll be using ```gamma=0.99```
 
-We use _Fixed Q-targets_ to prevent the "chasing a moving target" effect when using the same parameters (weights) for estimating the target and the Q value. This is because there is a big correlation between the TD target and the parameters we are changing. The solution is using a second network whose weights will be [softly updated](https://github.com/jscriptcoder/Navigation-Deep-Q-Network/blob/master/agent/agent.py#L228), with interpolation parameter **tau=1e-3**, and that we'll be using to calculate the TD target.
+We use _Fixed Q-targets_ to prevent the "chasing a moving target" effect when using the same parameters (weights) for estimating the target and the Q value. This is because there is a big correlation between the TD target and the parameters we are changing. The solution is using a second network whose weights will be [softly updated](https://github.com/jscriptcoder/Navigation-Deep-Q-Network/blob/master/agent/agent.py#L228), with interpolation parameter ```tau=1e-3```, and that we'll be using to calculate the TD target.
 
-We'll be using Adam optimizer with a learning rate **lr=5e-4** for our models. 
+We'll be using Adam optimizer with a learning rate ```lr=5e-4``` for our models. 
 
-How ofter we're gonna learn is dictated by the parameter **update_every=4**, which means every 4 steps we're gonna learn from previous experiences and update the weights of our networks.
+How ofter we're gonna learn is dictated by the parameter ```update_every=4```, which means every 4 steps we're gonna learn from previous experiences and update the weights of our networks.
+
+### Solutions
+1. Double Q-Network improvement
+Double DQNs, or double Learning, was introduced by [Hado van Hasselt](https://papers.nips.cc/paper/3964-double-q-learning). This method handles the problem of the overestimation of Q-values. There is an [interesting article](https://towardsdatascience.com/double-deep-q-networks-905dd8325412) explaining this solution.
+
+2. Dueling Q-Network
+The Q-values correspond to how good it is to be at that state and taking an action at that state ```Q(s,a)```. The idea behind this architecture is to separate the estimator of two elements: ```V(s)```, the value of being at that state and ```A(s,a)```, the advantage of taking that action at that state (how much better is to take this action versus all other possible actions at that state), using two new streams, and then we combine them through a special aggregation layer to get an estimate of ```Q(s,a)```. [Here](https://medium.com/@awjuliani/simple-reinforcement-learning-with-tensorflow-part-4-deep-q-networks-and-beyond-8438a3e2b8df#af34) there is better explanation of the architecture.
 
 ## Plot of Rewards
 ```
