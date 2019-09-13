@@ -96,6 +96,7 @@ Following I'll present two plots for each solution:
 As we can see, most of the improvements achieve better performance than Vanilla DQN, except for Prioritized Experience Replay, which reaches the target later in time. It does though get higher score during training than Vanilla DQN.
 
 We also can see that for this environment, using Dueling DQN is the best solution, making the agent reach the target very quickly compared to the other improvements. Second one is using Noisy Networks for exploration, which makes the agent learn quite fast at the beginning. And when all of them are combined, the performance boost is quite noticeable. We can have a better view of this in the next plot, where I'm showing the moving average score in a rolling window of 100 episodes for all the algorithms:
+
 <img src="images/performance_comparison.png" width="700" title="Performance comparison" />
 
 ## Ideas for Future Work
