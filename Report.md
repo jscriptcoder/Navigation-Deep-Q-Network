@@ -67,6 +67,25 @@ I'm using [ReLU](https://machinelearningmastery.com/rectified-linear-activation-
 ```
 A plot of rewards per episode is included to illustrate that the agent is able to receive an average reward (over 100 episodes) of at least +13. The submission reports the number of episodes needed to solve the environment.
 ```
+Following I'll present the rewards during training and a detailed result of the training with information such as moving average score in a rolling window of 100 episodes, at which epoch the agent reached the target score of +13 in the last 100 episodes and the maxium moving average score achieved during training, for each solution:
+
+1. **Vanilla DQN**
+<img src="images/vanilla_dqn_training.png" width="450" title="Vanilla DQN training" />
+
+2. **Double DQN**
+
+
+3. **Dueling DQN**
+
+
+4. **Prioritized DQN**
+
+
+5. **NoisyNets DQN**
+
+
+6. **All of them**
+
 
 ## Ideas for Future Work
 ```
