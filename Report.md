@@ -50,10 +50,10 @@ We'll see in a moment what it is to use all this improvements at the same time.
 [noisy_dqn]: images/noisy_dqn_agent.png=100x100 "DQN Agent using NoisyNets"
 [all_dqn]: images/all_dqn_agent.png=100x100 "DQN Agent using combined solutions"
 1. **Vanilla DQN**:
-<img src="images/vanilla_dqn_agent.png" width="200">
+<img src="images/vanilla_dqn_agent.png" style="width:450px;margin-left:30px;" />
 
 2. **Double DQN**:
-![double_dqn]
+<img src="images/double_dqn_agent.png" style="width:450px;margin-left:30px;" />
 
 3. **Dueling DQN**:
 ![dueling_dqn]
