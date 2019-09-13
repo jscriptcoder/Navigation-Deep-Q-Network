@@ -43,6 +43,8 @@ One fundamental problem of Reinforcement Learning is Exploration/Exploitation di
 We'll see in a moment what it is to use all this improvements at the same time.
 
 ### Neural Networks Architecture
+I'm using [ReLU](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/) activation function in all the NN layers. For Noisy Networks, I'm extending [torch.nn.Linear class](https://pytorch.org/docs/stable/nn.html#linear) as suggested in the [paper](https://arxiv.org/abs/1706.10295). See [NoisyLinear class](agent/model.py#L7)
+
 1. **Vanilla DQN**
 <img src="images/vanilla_dqn_agent.png" width="450" title="Vanilla DQN Agent" />
 
