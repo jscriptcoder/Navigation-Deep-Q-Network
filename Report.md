@@ -43,12 +43,12 @@ One fundamental problem of Reinforcement Learning is Exploration/Exploitation di
 We'll see in a moment what it is to use all this improvements at the same time.
 
 ### Neural Networks Architecture
-[vanilla_dqn]: ../images/vanilla_dqn_agent.png "Vanilla DQN Agent"
-[double_dqn]: ../images/double_dqn_agent.png "Double DQN Agent"
-[dueling_dqn]: ../images/dueling_dqn_agent.png "Dueling DQN Agent"
-[per_dqn]: ../images/per_dqn_agent.png "DQN Agent using PER"
-[noisy_dqn]: ../images/noisy_dqn_agent.png "DQN Agent using NoisyNets"
-[all_dqn]: ../images/all_dqn_agent.png "DQN Agent using combined solutions"
+[vanilla_dqn]: images/vanilla_dqn_agent.png "Vanilla DQN Agent"
+[double_dqn]: images/double_dqn_agent.png "Double DQN Agent"
+[dueling_dqn]: images/dueling_dqn_agent.png "Dueling DQN Agent"
+[per_dqn]: images/per_dqn_agent.png "DQN Agent using PER"
+[noisy_dqn]: images/noisy_dqn_agent.png "DQN Agent using NoisyNets"
+[all_dqn]: images/all_dqn_agent.png "DQN Agent using combined solutions"
 1. **Vanilla DQN**:
 ![vanilla_dqn]
 
