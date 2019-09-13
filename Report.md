@@ -20,7 +20,7 @@ _Experience Replay_ is a technique we use to decorrelate transitions observed by
 
 The _discount factor_ (γ) is a measure of how far ahead in time the algorithm looks. If we wanted to prioritise rewards in the distant future, we'd keep the value closer to one. On the other hand if we wanted to consider only rewards in the immediate future, then we'd use a discount factor closer to zero. I'll be using **gamma=0.99**
 
-We use _Fixed Q-targets_ to prevent chasing a moving target effect when using the same parameters (weights) for estimating the target and the Q value. This is because there is a big correlation between the TD target and the parameters we are changing. The solution is using a second network whose weights will be [softly updated](https://github.com/jscriptcoder/Navigation-Deep-Q-Network/blob/master/agent/agent.py#L228), with interpolation parameter **tau=1e-3**,and that we'll be using to calculate the TD target.
+We use _Fixed Q-targets_ to prevent the "chasing a moving target" effect when using the same parameters (weights) for estimating the target and the Q value. This is because there is a big correlation between the TD target and the parameters we are changing. The solution is using a second network whose weights will be [softly updated](https://github.com/jscriptcoder/Navigation-Deep-Q-Network/blob/master/agent/agent.py#L228), with interpolation parameter **tau=1e-3**,and that we'll be using to calculate the TD target.
 
 We'll be using Adam optimizer with a learning rate **lr=5e-4** for our models. 
 
