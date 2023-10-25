@@ -48,3 +48,5 @@ Follow the instructions in [Navigation.ipynb](Navigation.ipynb) to get started w
 
 ### Note:
 Sometimes Github cannot load Jupyter notebooks. If that's the case, [click here](https://nbviewer.jupyter.org/github/jscriptcoder/Navigation-Deep-Q-Network/blob/master/Navigation.ipynb) to visualize it using nbviewer.
+
+<!-- sort 1 -->
